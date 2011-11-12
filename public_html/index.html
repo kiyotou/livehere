@@ -51,9 +51,9 @@
 			"http://api.twitter.com/1/kiyotou/lists/live/statuses.json?callback=?",
 			null,
 			function(data, status){
-				for(i in data){
-					$("#livetweets").append(data[i]).append("<br />");
-				}
+				$.each(data, function(i, item){
+					$("#livetweets").append(item.text).append("<br />");
+				});
 			}
 		);
 	}
