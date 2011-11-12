@@ -9,7 +9,7 @@
 
 	<title>Live Here!!</title>
 	<meta name="description" content="">
-	<meta name="author" content="">
+	<meta name="author" content="kiyotou">
 
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -46,6 +46,19 @@
 	    	});
 	    });
 	  }
+	  
+	  $(function() {
+	  	$.getJSON(
+	  		"http://api.twitter.com/1/kiyotou/lists/live/statuses.json",
+	  		null,
+	  		function(data, status){
+	  			for(i in data){
+	  				$("#livetweets").append(data[i]).append("<br />");
+	  			}
+	  		}
+	  	);
+	  });
+
 	</script>
 </head>
 <body onload="initialize()">
@@ -61,7 +74,7 @@
 	</div>
 	<div id="main" class="wrapper">
 		<aside>
-			<h3>ここには直近のツイートを。</h3>
+			<div id="livetweets"></div>
 		</aside>
 		<article>
 			<header>
