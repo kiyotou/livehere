@@ -48,7 +48,7 @@
 	  
 	  // read tweets
 		$.getJSON(
-			"http://api.twitter.com/1/kiyotou/lists/live/statuses.json",
+			"http://api.twitter.com/1/kiyotou/lists/live/statuses.json?callback=?",
 			null,
 			function(data, status){
 				for(i in data){
