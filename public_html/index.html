@@ -47,17 +47,15 @@
 	    });
 	  }
 	  
-	  $(function() {
-	  	$.getJSON(
-	  		"http://api.twitter.com/1/kiyotou/lists/live/statuses.json",
-	  		null,
-	  		function(data, status){
-	  			for(i in data){
-	  				$("#livetweets").append(data[i]).append("<br />");
-	  			}
-	  		}
-	  	);
-	  });
+  	$.getJSON(
+  		"http://api.twitter.com/1/kiyotou/lists/live/statuses.json",
+  		null,
+  		function(data, status){
+  			for(i in data){
+  				$("#livetweets").append(data[i]).append("<br />");
+  			}
+  		}
+  	);
 
 	</script>
 </head>
