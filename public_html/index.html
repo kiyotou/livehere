@@ -52,7 +52,9 @@
 			null,
 			function(data, status){
 				$.each(data, function(i, item){
-					$("#livetweets").append(item.text).append("<br />");
+					$("#livetweets").append('<div class="tweet">');
+					$("#livetweets").append(item.user.name).append(" ").append(item.text);
+					$("#livetweets").append("</div>");
 				});
 			}
 		);
