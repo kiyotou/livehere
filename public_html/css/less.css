@@ -97,7 +97,13 @@ body {
 	margin:0 auto;
 	position:relative;
 }
-
+aside {
+	float:right;
+	width: 160px;
+}
+article {
+	width: 712px;
+}
 
 /*		Tablet Layout: 768px.
 		Gutters: 24px.
@@ -115,6 +121,13 @@ px      68    160    252    344    436    528    620    712    */
 
 	.wrapper {
 		width: 712px;
+	}
+	aside {
+		float:right;
+		width: 160px;
+	}
+	article {
+		width: 528px;
 	}
 	
 }
@@ -138,6 +151,10 @@ px      68    160    252    */
 	.wrapper {
 		width: 252px;
 	}
+	aside {
+	}
+	article {
+	}
 	
 	
 }
@@ -160,6 +177,10 @@ px      68    160    252    344    436    */
 
 	.wrapper {
 		width: 436px;
+	}
+	aside {
+	}
+	article {
 	}
 	
 }
