@@ -104,6 +104,9 @@ aside {
 article {
 	width: 712px;
 }
+article .maps {
+	width:100%;
+}
 
 /*		Tablet Layout: 768px.
 		Gutters: 24px.
@@ -152,8 +155,11 @@ px      68    160    252    */
 		width: 252px;
 	}
 	aside {
+		float:none;
+		width:100%;
 	}
 	article {
+		width:100%;
 	}
 	
 	
@@ -179,8 +185,11 @@ px      68    160    252    344    436    */
 		width: 436px;
 	}
 	aside {
+		float:none;
+		width:100%;
 	}
 	article {
+		width:100%;
 	}
 	
 }
