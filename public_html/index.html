@@ -7,69 +7,20 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<link rel="stylesheet" media="all" href="css/less.css"/>
+	<link rel="stylesheet" media="all" href="css/main.css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
 	<meta name="author" content="kiyotou">
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	<script type="text/javascript">
-	
-	  function initialize() {
-	    var latlng = new google.maps.LatLng(34.6718, 135.497841);
-	    var myOptions = {
-	      zoom: 15,
-	      center: latlng,
-	      mapTypeId: google.maps.MapTypeId.ROADMAP
-	    };
-	    var map = new google.maps.Map(document.getElementById("map_minami"), myOptions);
-
-	    // add Marker
-	    $.getJSON("js/livehouse.json", function(data){
-	    	$.each(data, function(){
-	    		// add infoWindow
-			    var marker = new google.maps.Marker({
-					position: new google.maps.LatLng(this.lat, this.lng), 
-					map: map, 
-					title:this.name
-				});
-				var infowindow = new google.maps.InfoWindow({
-					content: '<strong>'+this.name+'</strong>'
-				});
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.open(map,marker);
-				});
-	    	});
-	    });
-	  
-	  // read tweets
-		$.getJSON(
-			"http://api.twitter.com/1/kiyotou/lists/live/statuses.json?callback=?",
-			null,
-			function(data, status){
-				$.each(data, function(i, item){
-					var tweet = '';
-					tweet += '<div class="tweet">';
-					tweet += '<p>'+item.user.name+' '+item.text+'</p>';
-					tweet += '<p>'+item.created_at+'</p>';
-					tweet += '</div>';
-					$("#livetweets").append(tweet);
-				});
-			}
-		);
-	}
-	</script>
+	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body onload="initialize()">
 	<div id="header-container">
 		<header class="wrapper">
 			<h1 id="title">Live Here!!</h1>
-			<nav>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-				</ul>
-			</nav>
 		</header>
 	</div>
-	<div id="main" class="wrapper clearfix">
+	<div id="main" class="wrapper">
 		<aside>
 			<div id="livetweets"></div>
 		</aside>
@@ -85,14 +36,6 @@
 	</div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-
-<script src="js/script.js"></script>
-<script>
-	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
-	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-	s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 
 <!--[if lt IE 7 ]>
 	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
