@@ -93,6 +93,9 @@ body {
 	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
 }
 
+.wrapper {
+	margin:0 auto;
+}
 
 
 /*		Tablet Layout: 768px.
