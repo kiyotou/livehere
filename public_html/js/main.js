@@ -33,7 +33,7 @@ function initialize() {
 			$.each(data, function(i, item){
 				var tweet = '';
 				tweet += '<div class="tweet">';
-				tweet += '<p>'+item.user.name+' '+item.text+'</p>';
+				tweet += '<p><span class="username">'+item.user.name+'</span> '+item.text+'</p>';
 				tweet += '<p>'+item.created_at+'</p>';
 				tweet += '</div>';
 				$("#livetweets").append(tweet);

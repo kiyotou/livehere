@@ -99,15 +99,24 @@ body {
 }
 aside {
 	float:right;
-	width: 160px;
+	width: 252px;
 }
 article {
-	width: 712px;
+	width: 620px;
 }
 article .maps {
 	width:100%;
 	height:500px;
 }
+.tweet {
+  margin-bottom: 10px;
+  border-bottom: 1px dotted #999;
+  padding-bottom: 10px;
+}
+.tweet .username {
+  font-weight: bold;
+}
+
 
 /*		Tablet Layout: 768px.
 		Gutters: 24px.
