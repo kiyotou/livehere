@@ -117,6 +117,10 @@ article .maps {
   font-weight: bold;
 }
 
+#footer-container {
+	clear:both;
+}
+
 
 /*		Tablet Layout: 768px.
 		Gutters: 24px.
