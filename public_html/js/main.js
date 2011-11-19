@@ -60,7 +60,7 @@ function initialize() {
 						infowindow.open(map,marker);
 					});
 				}
-		});
+			}
 	});
 	
 }
