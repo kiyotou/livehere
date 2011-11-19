@@ -46,6 +46,7 @@ function initialize() {
 	// ツイートがあったライブハウスだけマーカー表示
 	$.getJSON("js/livehouse.json", function(data){
 			for(var i=0; i < tw_id_list.length; i++){
+				console.log(tw_id_list[i]+" == "+this.twitter);
 				if(tw_id_list[i] == this.twitter){
 					// add Marker
 				    var marker = new google.maps.Marker({
