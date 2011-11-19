@@ -16,6 +16,7 @@ function initialize() {
 		"http://api.twitter.com/1/kiyotou/lists/live/statuses.json?callback=?",
 		null,
 		function(data, status){
+		
 			$.each(data, function(i, item){
 			
 				// ツイートされたライブハウスのツイッターIDリストを配列に取得
@@ -39,33 +40,34 @@ function initialize() {
 				$("#livetweets").append(tweet);
 				
 			});
-			console.log(tw_id_list);
+			
+			// ツイートがあったライブハウスだけマーカー表示
+			$.getJSON("js/livehouse.json", function(data){
+					console.log("tw_id_list: "+tw_id_list);
+					for(var i=0; i < tw_id_list.length; i++){
+						console.log(tw_id_list[i]+" == "+this.twitter);
+						if(tw_id_list[i] == this.twitter){
+							// add Marker
+						    var marker = new google.maps.Marker({
+								position: new google.maps.LatLng(this.lat, this.lng), 
+								map: map, 
+								title:this.name
+							});
+							// add InfoWindow
+							var infowindow = new google.maps.InfoWindow({
+								content: '<strong>'+this.name+'</strong>'
+							});
+							google.maps.event.addListener(marker, 'click', function() {
+								infowindow.open(map,marker);
+							});
+						}
+					}
+			});
+			
 		}
+
 	);
 
-	// ツイートがあったライブハウスだけマーカー表示
-	$.getJSON("js/livehouse.json", function(data){
-			console.log("tw_id_list: "+tw_id_list);
-			for(var i=0; i < tw_id_list.length; i++){
-				console.log(tw_id_list[i]+" == "+this.twitter);
-				if(tw_id_list[i] == this.twitter){
-					// add Marker
-				    var marker = new google.maps.Marker({
-						position: new google.maps.LatLng(this.lat, this.lng), 
-						map: map, 
-						title:this.name
-					});
-					// add InfoWindow
-					var infowindow = new google.maps.InfoWindow({
-						content: '<strong>'+this.name+'</strong>'
-					});
-					google.maps.event.addListener(marker, 'click', function() {
-						infowindow.open(map,marker);
-					});
-				}
-			}
-	});
-	
 }
 
 
