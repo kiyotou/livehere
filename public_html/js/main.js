@@ -14,7 +14,14 @@ function initialize() {
 		"http://api.twitter.com/1/kiyotou/lists/live/statuses.json?callback=?",
 		null,
 		function(data, status){
+			var tw_id;
+			var tw_id_list = [];
 			$.each(data, function(i, item){
+			
+				// ツイートされた場所だけをマーカー表示
+				tw_id =item.user.screen_name;
+				tw_id_list.push(tw_id);
+				console.log(tw_id_list);
 			
 				// write tweets
 				var tweet = '';
