@@ -14,14 +14,20 @@ function initialize() {
 		"http://api.twitter.com/1/kiyotou/lists/live/statuses.json?callback=?",
 		null,
 		function(data, status){
-			var tw_id;
 			var tw_id_list = [];
 			$.each(data, function(i, item){
 			
 				// ツイートされた場所だけをマーカー表示
-				tw_id =item.user.screen_name;
-				tw_id_list.push(tw_id);
-				console.log(tw_id_list);
+				var tw_id =item.user.screen_name;
+				var tw_exist = false;
+				for(var i=0; i < tw_id_list.length; i++){
+					if(tw_id_list[i] == tw_id){
+						tw_exist = true;
+					}
+				}
+				if(tw_exist==false){
+					tw_id_list.push(tw_id);
+				}
 			
 				// write tweets
 				var tweet = '';
@@ -34,6 +40,7 @@ function initialize() {
 				// add marker with tweet
 				
 			});
+			console.log(tw_id_list);
 		}
 	);
 
