@@ -9,12 +9,13 @@ function initialize() {
 	};
 	var map = new google.maps.Map(document.getElementById("map_minami"), myOptions);
 
+	var tw_id_list = [];
+
 	// read tweets
 	$.getJSON(
 		"http://api.twitter.com/1/kiyotou/lists/live/statuses.json?callback=?",
 		null,
 		function(data, status){
-			var tw_id_list = [];
 			$.each(data, function(i, item){
 			
 				// ツイートされたライブハウスのツイッターIDリストを配列に取得
