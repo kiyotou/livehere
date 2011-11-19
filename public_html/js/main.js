@@ -45,6 +45,7 @@ function initialize() {
 
 	// ツイートがあったライブハウスだけマーカー表示
 	$.getJSON("js/livehouse.json", function(data){
+			console.log("tw_id_list: "+tw_id_list);
 			for(var i=0; i < tw_id_list.length; i++){
 				console.log(tw_id_list[i]+" == "+this.twitter);
 				if(tw_id_list[i] == this.twitter){
