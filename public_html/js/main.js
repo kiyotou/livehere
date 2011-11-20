@@ -33,7 +33,7 @@ function initialize() {
 			
 				// write tweets
 				var tweet = '';
-				tweet += '<li class="tweet tw_'+tw_id+'">';
+				tweet += '<li class="tw_'+tw_id+'">';
 				tweet += '<p><span class="username">'+item.user.name+'</span> '+item.text+'</p>';
 				tweet += '<p>'+item.created_at+'</p>';
 				tweet += '</li>';

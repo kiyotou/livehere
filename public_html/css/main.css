@@ -9,10 +9,10 @@
     list-style-type:none;
     position:relative;
 }
-#livetweets .tweet {
+#livetweets li {
 	overflow: hidden;
 }
-#livetweets .tweet p {
+#livetweets li p {
   font-size: small;
 }
 

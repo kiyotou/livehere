@@ -108,12 +108,12 @@ article .maps {
 	width:100%;
 	height:500px;
 }
-.tweet {
+#livetweets li {
   margin-bottom: 10px;
   border-bottom: 1px dotted #999;
   padding-bottom: 10px;
 }
-.tweet .username {
+#livetweets li .username {
   font-weight: bold;
 }
 
