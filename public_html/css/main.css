@@ -6,9 +6,18 @@
 /* twitter */
 
 #livetweets {
+    list-style-type:none;
+    position:relative;
 }
 #livetweets .tweet {
+	overflow: hidden;
 }
 #livetweets .tweet p {
   font-size: small;
+}
+
+.spyWrapper {
+    height: 100%;
+    overflow: hidden;
+    position: relative;    
 }
