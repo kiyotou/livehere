@@ -13,7 +13,6 @@ $.fn.simpleSpy = function (limit, interval) {
             currentItem = limit,
             total = 0, // initialise later on
             height = $list.find('> li:first').height();
-            console.log(height);
             
         // capture the cache
         $list.find('> li').each(function () {
@@ -39,6 +38,7 @@ $.fn.simpleSpy = function (limit, interval) {
             $list.find('> li:last').animate({ opacity : 0}, 1000, function () {
                 // increase the height of the NEW first item
                 $insert.animate({ height : height }, 1000).animate({ opacity : 1 }, 1000);
+ 	           console.log(height);
                 
                 // AND at the same time - decrease the height of the LAST item
                 // $(this).animate({ height : 0 }, 1000, function () {
