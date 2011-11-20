@@ -4,7 +4,7 @@ function initialize() {
 	var latlng = new google.maps.LatLng(34.6718, 135.497841);
 	var myOptions = {
 	  zoom: 15,
-	  // center: latlng,
+	  center: latlng,
 	  mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	var map = new google.maps.Map(document.getElementById("map_minami"), myOptions);
@@ -33,7 +33,7 @@ function initialize() {
 			
 				// write tweets
 				var tweet = '';
-				tweet += '<div class="tweet">';
+				tweet += '<div class="tweet tw_'+tw_id+'">';
 				tweet += '<p><span class="username">'+item.user.name+'</span> '+item.text+'</p>';
 				tweet += '<p>'+item.created_at+'</p>';
 				tweet += '</div>';
@@ -55,7 +55,7 @@ function initialize() {
 							});
 							// add InfoWindow
 							var infowindow = new google.maps.InfoWindow({
-								content: '<strong>'+this.name+'</strong>'
+								content: $("#livetweets .tw_"+this.twitter).html()
 							});
 							google.maps.event.addListener(marker, 'click', function() {
 								infowindow.open(map,marker);
