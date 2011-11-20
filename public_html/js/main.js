@@ -33,13 +33,16 @@ function initialize() {
 			
 				// write tweets
 				var tweet = '';
-				tweet += '<div class="tweet tw_'+tw_id+'">';
+				tweet += '<li class="tweet tw_'+tw_id+'">';
 				tweet += '<p><span class="username">'+item.user.name+'</span> '+item.text+'</p>';
 				tweet += '<p>'+item.created_at+'</p>';
-				tweet += '</div>';
+				tweet += '</li>';
 				$("#livetweets").append(tweet);
 				
 			});
+			
+			// ツイートリストにSimpleSpy適用
+			$("#livetweets").simpleSpy();
 			
 			// ツイートがあったライブハウスだけマーカー表示
 			$.getJSON("js/livehouse.json", function(data){
