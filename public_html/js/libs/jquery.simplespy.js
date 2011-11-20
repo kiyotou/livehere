@@ -13,6 +13,7 @@ $.fn.simpleSpy = function (limit, interval) {
             currentItem = limit,
             total = 0, // initialise later on
             height = $list.find('> li:first').height();
+            console.log(height);
             
         // capture the cache
         $list.find('> li').each(function () {
