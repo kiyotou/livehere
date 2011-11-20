@@ -29,7 +29,7 @@ $.fn.simpleSpy = function (limit, interval) {
         function spy() {
             // insert a new item with opacity and height of zero
             var $insert = $(items[currentItem]).css({
-                height : 0,
+                //height : 0,
                 opacity : 0,
                 display : 'none'
             }).prependTo($list);
