@@ -33,7 +33,6 @@ $.fn.simpleSpy = function (limit, interval) {
                 opacity : 0
                 //display : 'none'
             }).prependTo($list);
-            console.log(items[currentItem]);
                         
             // fade the LAST item out
             $list.find('> li:last').animate({ opacity : 0}, 1000, function () {
