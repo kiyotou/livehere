@@ -109,9 +109,10 @@ article .maps {
 	height:500px;
 }
 #livetweets li {
-  margin-bottom: 10px;
   border-bottom: 1px dotted #999;
-  padding-bottom: 10px;
+}
+#livetweets li p {
+  margin-bottom: 8px;
 }
 #livetweets li .username {
   font-weight: bold;
