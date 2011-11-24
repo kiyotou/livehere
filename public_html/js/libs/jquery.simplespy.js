@@ -13,7 +13,6 @@ $.fn.simpleSpy = function (limit, interval) {
             currentItem = limit,
             total = 0, // initialise later on
             height = $list.find('> li:first').height();
-            console.log("height: "+height);
             
         // capture the cache
         $list.find('> li').each(function () {
@@ -29,6 +28,7 @@ $.fn.simpleSpy = function (limit, interval) {
         // 2. effect        
         function spy() {
             // insert a new item with opacity and height of zero
+            console.log($(items[currentItem]).height());
             var $insert = $(items[currentItem]).css({
                 height : 0,
                 opacity : 0,
