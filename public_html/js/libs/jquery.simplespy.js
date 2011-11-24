@@ -13,6 +13,7 @@ $.fn.simpleSpy = function (limit, interval) {
             currentItem = limit,
             total = 0, // initialise later on
             height = $list.find('> li:first').height();
+            console.log("height: "+height);
             
         // capture the cache
         $list.find('> li').each(function () {
@@ -30,8 +31,8 @@ $.fn.simpleSpy = function (limit, interval) {
             // insert a new item with opacity and height of zero
             var $insert = $(items[currentItem]).css({
                 height : 0,
-                opacity : 0
-                //display : 'none'
+                opacity : 0,
+                display : 'none'
             }).prependTo($list);
                         
             // fade the LAST item out
