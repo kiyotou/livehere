@@ -38,7 +38,7 @@ $.fn.simpleSpy = function (limit, interval) {
             // fade the LAST item out
             $list.find('> li:last').animate({ opacity : 0}, 1000, function () {
                 // increase the height of the NEW first item
-                $insert.animate({ height : height }, 1000).animate({ opacity : 1 }, 1000);
+                $insert.css({display : 'block'}).animate({ height : height }, 1000).animate({ opacity : 1 }, 1000);
                 
                 // AND at the same time - decrease the height of the LAST item
                 // $(this).animate({ height : 0 }, 1000, function () {
