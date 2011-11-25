@@ -10,14 +10,7 @@
     position:relative;
 }
 #livetweets li {
-	overflow: hidden;
 }
 #livetweets li p {
   font-size: small;
-}
-
-.spyWrapper {
-    height: 100%;
-    overflow: hidden;
-    position: relative;    
 }
