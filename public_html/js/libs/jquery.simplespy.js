@@ -21,8 +21,6 @@ $.fn.simpleSpy = function (limit, interval) {
         
         total = items.length;
         
-        $list.wrap('<div class="spyWrapper" />').parent().css({ height : height * limit });
-        
         $list.find('> li').filter(':gt(' + (limit - 1) + ')').remove();
 
         // 2. effect        
@@ -41,10 +39,10 @@ $.fn.simpleSpy = function (limit, interval) {
                 $insert.css({display : 'block'}).animate({ height : height }, 1000).animate({ opacity : 1 }, 1000);
                 
                 // AND at the same time - decrease the height of the LAST item
-                // $(this).animate({ height : 0 }, 1000, function () {
+                $(this).animate({ height : 0 }, 1000, function () {
                     // finally fade the first item in (and we can remove the last)
                     $(this).remove();
-                // });
+                });
             });
             
             currentItem++;

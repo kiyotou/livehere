@@ -43,7 +43,7 @@ function initialize() {
 			});
 			
 			// ツイートリストにSimpleSpy適用
-			$("#livetweets").simpleSpy();
+			$("#livetweets").simpleSpy(6, 4000);
 			
 			// ツイートがあったライブハウスだけマーカー表示
 			$.getJSON("js/livehouse.json", function(data){
